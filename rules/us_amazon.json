@@ -1,0 +1,129 @@
+{
+  "market": "US",
+  "platform": "Amazon",
+  "version": "v1",
+  "note": "规则用于可溯源检测演示。依据链接为官方公开页面，提交前请按 02-数据采集清单 核对并补充官方条款原文。",
+  "rules": [
+    {
+      "id": "R001",
+      "title": "医疗功效宣称违规",
+      "type": "违禁词/虚假宣称",
+      "categories": [],
+      "keywords": ["cure", "cures", "heal", "heals", "treat", "treats", "diagnose", "fda approved", "fda certified", "clinically proven", "治疗", "治愈", "根治", "祛病", "抗癌"],
+      "severity": "high",
+      "basis": "FDA / Amazon Restricted Products",
+      "basis_url": "https://www.fda.gov",
+      "suggestion": "删除医疗/治疗功效宣称，改为成分或功能描述。"
+    },
+    {
+      "id": "R002",
+      "title": "绝对化/促销用语违规",
+      "type": "违禁词/标题规范",
+      "categories": [],
+      "keywords": ["best seller", "#1", "no.1", "guaranteed", "100% effective", "free shipping", "best price", "top rated", "limited time", "全网第一", "最好", "保证", "绝对"],
+      "severity": "medium",
+      "basis": "Amazon 标题/五点规范",
+      "basis_url": "https://sellercentral.amazon.com",
+      "suggestion": "删除绝对化/促销用语，改为客观描述。"
+    },
+    {
+      "id": "R003",
+      "title": "抗菌/杀菌宣称需EPA注册",
+      "type": "认证缺失/虚假宣称",
+      "categories": ["家居", "个护", "服饰", "母婴", "宠物", "健康器械"],
+      "keywords": ["antibacterial", "antimicrobial", "disinfectant", "sanitiz", "steriliz", "kills 99", "germ", "bacteria-free", "杀菌", "抗菌", "消毒", "灭菌", "除菌"],
+      "severity": "high",
+      "basis": "US EPA FIFRA",
+      "basis_url": "https://www.epa.gov",
+      "suggestion": "若产品未经 EPA 注册，删除杀菌/抗菌宣称，改为物理功能描述。"
+    },
+    {
+      "id": "R004",
+      "title": "儿童产品需CPC/CPSIA合规",
+      "type": "认证缺失",
+      "categories": ["玩具", "儿童用品"],
+      "keywords": [],
+      "severity": "high",
+      "basis": "US CPSIA / CPSC",
+      "basis_url": "https://www.cpsc.gov",
+      "suggestion": "确认产品已通过 CPSC 认可实验室检测，并在页面声明符合 CPSIA 并提供 CPC。"
+    },
+    {
+      "id": "R005",
+      "title": "小部件窒息警示缺失",
+      "type": "警示语缺失",
+      "categories": ["玩具", "儿童用品"],
+      "keywords": ["small parts", "choking hazard", "under 3", "ages 3", "小零件", "窒息", "3岁", "3岁以下"],
+      "severity": "high",
+      "basis": "CPSC 小部件法规",
+      "basis_url": "https://www.cpsc.gov",
+      "suggestion": "对 3 岁以下儿童产品，添加小部件窒息警示语并标注适用年龄。"
+    },
+    {
+      "id": "R006",
+      "title": "电子产品需FCC认证",
+      "type": "认证缺失",
+      "categories": ["3C", "电子"],
+      "keywords": [],
+      "severity": "medium",
+      "basis": "US FCC 设备认证",
+      "basis_url": "https://www.fcc.gov",
+      "suggestion": "确认完成 FCC 认证并在页面标注 FCC ID。"
+    },
+    {
+      "id": "R007",
+      "title": "锂电池运输限制",
+      "type": "运输合规",
+      "categories": ["3C", "电子"],
+      "keywords": ["battery", "rechargeable", "lithium", "power bank", "锂电池", "充电", "电池"],
+      "severity": "medium",
+      "basis": "IATA / UN38.3",
+      "basis_url": "https://www.iata.org",
+      "suggestion": "标注电池类型、容量与运输限制（UN38.3 测试报告）。"
+    },
+    {
+      "id": "R008",
+      "title": "食品接触/饰品需核实Prop65",
+      "type": "警示语缺失",
+      "categories": ["食品容器", "珠宝饰品", "陶瓷玻璃"],
+      "keywords": [],
+      "severity": "medium",
+      "basis": "California Proposition 65 / OEHHA",
+      "basis_url": "https://oehha.ca.gov/proposition-65",
+      "suggestion": "核实是否含铅/镉/邻苯等列管物质，如含有需加 Prop 65 警示语。"
+    },
+    {
+      "id": "R009",
+      "title": "环保宣称需佐证",
+      "type": "虚假宣称",
+      "categories": [],
+      "keywords": ["eco-friendly", "biodegradable", "compostable", "100% recyclable", "environmentally friendly", "carbon neutral", "sustainable", "环保", "可降解", "可回收", "零碳"],
+      "severity": "medium",
+      "basis": "FTC Green Guides",
+      "basis_url": "https://www.ftc.gov",
+      "suggestion": "提供可验证的环保依据，或删除无依据的环保宣称。"
+    },
+    {
+      "id": "R010",
+      "title": "濒危物种制品风险",
+      "type": "平台禁限售",
+      "categories": [],
+      "keywords": ["ivory", "real fur", "coral", "endangered", "exotic animal", "象牙", "真皮草", "珊瑚", "濒危"],
+      "severity": "high",
+      "basis": "CITES / Amazon Restricted Products",
+      "basis_url": "https://cites.org",
+      "suggestion": "删除涉及濒危物种原料的描述或提供合法来源证明。"
+    },
+    {
+      "id": "R011",
+      "title": "化妆品需成分标注且不做药物宣称",
+      "type": "认证缺失/宣称规范",
+      "categories": ["美妆", "护肤", "个护"],
+      "keywords": [],
+      "severity": "medium",
+      "basis": "FDA MoCRA / 21 CFR",
+      "basis_url": "https://www.fda.gov/cosmetics",
+      "suggestion": "按 INCI 标注成分，不做药物功效宣称；确认完成 FDA MoCRA 设施注册与产品列名。"
+    }
+  ]
+}

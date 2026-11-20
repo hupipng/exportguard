@@ -1,0 +1,580 @@
+{
+  "P001": {
+    "detected": [
+      {
+        "label": "儿童产品需CPC/CPSIA合规",
+        "type": "认证缺失",
+        "severity": "high",
+        "matched": [],
+        "basis": "US CPSIA / CPSC",
+        "basis_url": "https://www.cpsc.gov",
+        "suggestion": "确认产品已通过 CPSC 认可实验室检测，并在页面声明符合 CPSIA 并提供 CPC。",
+        "source": "规则库"
+      },
+      {
+        "label": "小部件窒息警示缺失",
+        "type": "警示语缺失",
+        "severity": "high",
+        "matched": [
+          "small parts",
+          "小零件",
+          "3岁"
+        ],
+        "basis": "CPSC 小部件法规",
+        "basis_url": "https://www.cpsc.gov",
+        "suggestion": "对 3 岁以下儿童产品，添加小部件窒息警示语并标注适用年龄。",
+        "source": "规则库"
+      },
+      {
+        "label": "环保宣称需佐证",
+        "type": "虚假宣称",
+        "severity": "medium",
+        "matched": [
+          "eco-friendly",
+          "环保"
+        ],
+        "basis": "FTC Green Guides",
+        "basis_url": "https://www.ftc.gov",
+        "suggestion": "提供可验证的环保依据，或删除无依据的环保宣称。",
+        "source": "规则库"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "medium",
+        "matched": [
+          "环保ABS材质"
+        ],
+        "basis": "《中华人民共和国广告法》第九条、第十一条：广告不得使用国家级、最高级、最佳等用语；涉及环保等内容的应当真实、准确，并表明出处",
+        "basis_url": "",
+        "suggestion": "删除或修改“环保”表述，改为“ABS材质”，如确有环保认证请标注具体认证名称及编号",
+        "source": "LLM"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "medium",
+        "matched": [
+          "eco-friendly ABS material"
+        ],
+        "basis": "FTC Green Guides (16 CFR Part 260)：环境效益宣称须有可靠科学依据并限定适用范围，泛化“eco-friendly”属过度宣称",
+        "basis_url": "",
+        "suggestion": "删除“eco-friendly”，改为“ABS plastic”，或提供具体可验证的环保依据",
+        "source": "LLM"
+      },
+      {
+        "label": "认证缺失(CPC/FCC/FDA/CE等)",
+        "type": "认证缺失(CPC/FCC/FDA/CE等)",
+        "severity": "high",
+        "matched": [
+          "幼儿大颗粒积木 1-3岁 早教拼插玩具"
+        ],
+        "basis": "美国CPSIA及16 CFR Part 1250要求儿童玩具须有CPC证书并符合ASTM F963；欧盟玩具安全指令2009/48/EC要求CE认证",
+        "basis_url": "",
+        "suggestion": "补充CPC证书（美国站）及CE认证/EN71检测报告（欧盟站），并在Listing中明示适用年龄与合规标识",
+        "source": "LLM"
+      },
+      {
+        "label": "平台禁限售",
+        "type": "平台禁限售",
+        "severity": "high",
+        "matched": [
+          "含小零件，需成人监护"
+        ],
+        "basis": "亚马逊玩具类目政策及CPSIA小零件规定（16 CFR Part 1501）：3岁以下儿童玩具不得含有小零件，含小零件产品须标注窒息危险警告",
+        "basis_url": "",
+        "suggestion": "1-3岁产品不应含小零件；如确含小零件，须加贴窒息危险警告标签并明确标注“不适合3岁以下儿童”，同时核实是否与适用年龄宣称冲突",
+        "source": "LLM"
+      }
+    ],
+    "gold": [
+      "儿童产品需CPC/CPSIA合规",
+      "小部件窒息警示缺失",
+      "需符合ASTM F963玩具安全标准"
+    ]
+  },
+  "P002": {
+    "detected": [
+      {
+        "label": "电子产品需FCC认证",
+        "type": "认证缺失",
+        "severity": "medium",
+        "matched": [],
+        "basis": "US FCC 设备认证",
+        "basis_url": "https://www.fcc.gov",
+        "suggestion": "确认完成 FCC 认证并在页面标注 FCC ID。",
+        "source": "规则库"
+      },
+      {
+        "label": "锂电池运输限制",
+        "type": "运输合规",
+        "severity": "medium",
+        "matched": [
+          "battery",
+          "rechargeable",
+          "lithium",
+          "锂电池",
+          "充电",
+          "电池"
+        ],
+        "basis": "IATA / UN38.3",
+        "basis_url": "https://www.iata.org",
+        "suggestion": "标注电池类型、容量与运输限制（UN38.3 测试报告）。",
+        "source": "规则库"
+      },
+      {
+        "label": "认证缺失",
+        "type": "认证缺失",
+        "severity": "high",
+        "matched": [
+          "内置锂电池"
+        ],
+        "basis": "FCC Part 15（美国联邦通信委员会对射频设备的认证要求）及UN38.3（锂电池运输安全测试要求）",
+        "basis_url": "",
+        "suggestion": "补充FCC ID及UN38.3测试报告，并在listing中标注相关认证信息",
+        "source": "LLM"
+      },
+      {
+        "label": "认证缺失",
+        "type": "认证缺失",
+        "severity": "medium",
+        "matched": [
+          "蓝牙5.3芯片"
+        ],
+        "basis": "FCC Part 15（蓝牙设备属于射频设备，需FCC认证）",
+        "basis_url": "",
+        "suggestion": "确认蓝牙模块已通过FCC认证，并在产品页面或包装上标注FCC ID",
+        "source": "LLM"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "medium",
+        "matched": [
+          "超长续航"
+        ],
+        "basis": "亚马逊广告政策（禁止使用“超长”等无依据的绝对化或夸大宣传用语）",
+        "basis_url": "",
+        "suggestion": "改为具体量化描述，如“单次续航8小时”，避免使用“超长”等模糊夸大词汇",
+        "source": "LLM"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "low",
+        "matched": [
+          "Long Battery Life"
+        ],
+        "basis": "亚马逊广告政策（禁止无依据的夸大宣传）",
+        "basis_url": "",
+        "suggestion": "改为具体时长描述，如“Up to 8 hours of playtime per charge”",
+        "source": "LLM"
+      }
+    ],
+    "gold": [
+      "电子产品需FCC认证",
+      "锂电池运输限制"
+    ]
+  },
+  "P003": {
+    "detected": [
+      {
+        "label": "化妆品需成分标注且不做药物宣称",
+        "type": "认证缺失/宣称规范",
+        "severity": "medium",
+        "matched": [],
+        "basis": "FDA MoCRA / 21 CFR",
+        "basis_url": "https://www.fda.gov/cosmetics",
+        "suggestion": "按 INCI 标注成分，不做药物功效宣称；确认完成 FDA MoCRA 设施注册与产品列名。",
+        "source": "规则库"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "medium",
+        "matched": [
+          "适合所有肤质"
+        ],
+        "basis": "中国《化妆品监督管理条例》第二十二条及《广告法》第二十八条（虚假或引人误解的宣传）；跨境电商平台（如亚马逊、天猫国际）化妆品类目宣称审核规则",
+        "basis_url": "",
+        "suggestion": "删除“适合所有肤质”的绝对化表述，改为“适合多数肤质，敏感肌建议先做局部测试”或按实际适用肤质标注",
+        "source": "LLM"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "medium",
+        "matched": [
+          "Suitable for all skin types"
+        ],
+        "basis": "美国FTC《广告 substantiation 指南》及化妆品宣称需有充分依据；亚马逊等平台化妆品宣称政策",
+        "basis_url": "",
+        "suggestion": "改为“Suitable for most skin types”并补充适用肤质说明，避免绝对化宣称",
+        "source": "LLM"
+      },
+      {
+        "label": "认证缺失(CPC/FCC/FDA/CE等)",
+        "type": "认证缺失(CPC/FCC/FDA/CE等)",
+        "severity": "low",
+        "matched": [
+          "玻尿酸保湿面霜"
+        ],
+        "basis": "中国《化妆品监督管理条例》要求普通化妆品完成备案；美国FDA化妆品设施注册及产品列名（MoCRA）",
+        "basis_url": "",
+        "suggestion": "确认产品已完成化妆品备案/注册，并在 listing 中标注备案编号或合规信息，避免无备案销售",
+        "source": "LLM"
+      }
+    ],
+    "gold": [
+      "化妆品需成分标注且不做药物宣称",
+      "需完成FDA MoCRA设施注册与产品列名"
+    ]
+  },
+  "P004": {
+    "detected": [
+      {
+        "label": "抗菌/杀菌宣称需EPA注册",
+        "type": "认证缺失/虚假宣称",
+        "severity": "high",
+        "matched": [
+          "杀菌"
+        ],
+        "basis": "US EPA FIFRA",
+        "basis_url": "https://www.epa.gov",
+        "suggestion": "若产品未经 EPA 注册，删除杀菌/抗菌宣称，改为物理功能描述。",
+        "source": "规则库"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "high",
+        "matched": [
+          "杀菌净化"
+        ],
+        "basis": "美国FTC《广告真实性政策》及EPA《联邦杀虫剂、杀菌剂和灭鼠剂法案》(FIFRA)：宣称杀菌需有EPA注册，普通加湿器不得作杀菌宣称",
+        "basis_url": "",
+        "suggestion": "删除“杀菌”及“purify”等净化空气宣称，改为“帮助增加空气湿度”等客观描述",
+        "source": "LLM"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "high",
+        "matched": [
+          "purify and freshen the air"
+        ],
+        "basis": "美国FTC广告真实性政策及EPA FIFRA：空气净化/清新功效宣称需有科学依据及相应注册",
+        "basis_url": "",
+        "suggestion": "删除“purify and freshen the air”，改为“adds moisture to the air”",
+        "source": "LLM"
+      },
+      {
+        "label": "认证缺失",
+        "type": "认证缺失",
+        "severity": "medium",
+        "matched": [
+          "Ultrasonic Aromatherapy Humidifier"
+        ],
+        "basis": "美国FCC Part 15对含电子元件产品的电磁兼容要求；亚马逊要求电子类产品提供FCC合规证明",
+        "basis_url": "",
+        "suggestion": "确认产品含电子控制电路，补充FCC认证/合规声明并在listing上传",
+        "source": "LLM"
+      },
+      {
+        "label": "认证缺失",
+        "type": "认证缺失",
+        "severity": "medium",
+        "matched": [
+          "超声波香薰加湿器"
+        ],
+        "basis": "欧盟CE认证（LVD低电压指令2014/35/EU、EMC指令2014/30/EU）适用于含电气部件产品",
+        "basis_url": "",
+        "suggestion": "如销往欧盟，补充CE认证及符合性声明",
+        "source": "LLM"
+      },
+      {
+        "label": "平台禁限售",
+        "type": "平台禁限售",
+        "severity": "low",
+        "matched": [
+          "可添加精油"
+        ],
+        "basis": "亚马逊危险品/液体类商品政策：含精油等液体产品需提供SDS安全数据表",
+        "basis_url": "",
+        "suggestion": "准备精油成分SDS并在后台上传，确认不属于平台限售液体",
+        "source": "LLM"
+      }
+    ],
+    "gold": [
+      "抗菌/杀菌宣称需EPA注册"
+    ]
+  },
+  "P005": {
+    "detected": [
+      {
+        "label": "儿童产品需CPC/CPSIA合规",
+        "type": "认证缺失",
+        "severity": "high",
+        "matched": [],
+        "basis": "US CPSIA / CPSC",
+        "basis_url": "https://www.cpsc.gov",
+        "suggestion": "确认产品已通过 CPSC 认可实验室检测，并在页面声明符合 CPSIA 并提供 CPC。",
+        "source": "规则库"
+      },
+      {
+        "label": "认证缺失",
+        "type": "认证缺失",
+        "severity": "high",
+        "matched": [
+          "婴儿睡袋"
+        ],
+        "basis": "美国消费品安全委员会(CPSC)16 CFR Part 1610 服装纺织品可燃性标准及CPSC婴儿睡眠产品安全规则(16 CFR Part 1236，依据《消费品安全改进法案》CPSIA)，婴儿睡眠类纺织品在美销售通常需CPC儿童产品证书",
+        "basis_url": "",
+        "suggestion": "确认产品是否属于儿童产品，补充CPSC认可的第三方实验室检测报告并出具CPC证书，在listing中标注合规信息",
+        "source": "LLM"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "low",
+        "matched": [
+          "透气舒适"
+        ],
+        "basis": "美国联邦贸易委员会(FTC)《广告 substantiation 指南》及FTC法案第5条禁止无依据的功效宣称",
+        "basis_url": "",
+        "suggestion": "保留透气性测试数据或改为客观描述，如\"cotton fabric\"，避免无依据的舒适性功效断言",
+        "source": "LLM"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "low",
+        "matched": [
+          "protects baby's chin and neck from scratches"
+        ],
+        "basis": "FTC法案第5条关于虚假或误导性宣称的规定",
+        "basis_url": "",
+        "suggestion": "改为描述性表述如\"zipper garage covers the zipper pull\"，避免暗示防护功效",
+        "source": "LLM"
+      }
+    ],
+    "gold": [
+      "儿童产品需CPC/CPSIA合规"
+    ]
+  },
+  "P006": {
+    "detected": [
+      {
+        "label": "食品接触/饰品需核实Prop65",
+        "type": "警示语缺失",
+        "severity": "medium",
+        "matched": [],
+        "basis": "California Proposition 65 / OEHHA",
+        "basis_url": "https://oehha.ca.gov/proposition-65",
+        "suggestion": "核实是否含铅/镉/邻苯等列管物质，如含有需加 Prop 65 警示语。",
+        "source": "规则库"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "medium",
+        "matched": [
+          "24小时保温"
+        ],
+        "basis": "《中华人民共和国广告法》第二十八条（虚假广告）；美国FTC Act Section 5（deceptive advertising）",
+        "basis_url": "",
+        "suggestion": "删除绝对化时长承诺，改为“长时间保温（具体时长因环境而异）”或提供第三方检测报告佐证",
+        "source": "LLM"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "medium",
+        "matched": [
+          "Keeps drinks hot or cold for up to 24 hours"
+        ],
+        "basis": "FTC Act Section 5（deceptive advertising）",
+        "basis_url": "",
+        "suggestion": "改为“Helps maintain temperature for extended periods; actual performance varies”或附检测依据",
+        "source": "LLM"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "low",
+        "matched": [
+          "食品级材质"
+        ],
+        "basis": "《中华人民共和国广告法》第十一条（引用内容需真实、准确）；FDA 21 CFR 175.300（食品接触材料）",
+        "basis_url": "",
+        "suggestion": "保留但需确保有食品接触材料合规检测报告（如FDA/GB 4806）支撑，避免无依据宣称",
+        "source": "LLM"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "low",
+        "matched": [
+          "Food-grade materials"
+        ],
+        "basis": "FTC Act Section 5；FDA food-contact substance regulations (21 CFR)",
+        "basis_url": "",
+        "suggestion": "确保有FDA食品接触材料合规证明，否则改为“made with materials intended for food contact”",
+        "source": "LLM"
+      },
+      {
+        "label": "认证缺失",
+        "type": "认证缺失",
+        "severity": "medium",
+        "matched": [
+          "316不锈钢保温杯/316 Stainless Steel Insulated Tumbler"
+        ],
+        "basis": "美国FDA 21 CFR 175.300（食品接触材料合规）；欧盟EU 1935/2004（食品接触材料框架法规）",
+        "basis_url": "",
+        "suggestion": "出口美国需提供FDA食品接触材料符合性声明；出口欧盟需符合EU 1935/2004及相应检测报告，并在listing中标注合规信息",
+        "source": "LLM"
+      },
+      {
+        "label": "认证缺失",
+        "type": "认证缺失",
+        "severity": "low",
+        "matched": [
+          "防漏/Leak-resistant design"
+        ],
+        "basis": "平台商品安全政策（如Amazon产品安全要求）；FTC Act Section 5",
+        "basis_url": "",
+        "suggestion": "保留但需有防漏测试依据，避免无依据性能宣称",
+        "source": "LLM"
+      }
+    ],
+    "gold": [
+      "食品接触/饰品需核实Prop65"
+    ]
+  },
+  "P007": {
+    "detected": [
+      {
+        "label": "环保宣称需佐证",
+        "type": "虚假宣称",
+        "severity": "medium",
+        "matched": [
+          "eco-friendly",
+          "biodegradable",
+          "sustainable",
+          "环保",
+          "可降解"
+        ],
+        "basis": "FTC Green Guides",
+        "basis_url": "https://www.ftc.gov",
+        "suggestion": "提供可验证的环保依据，或删除无依据的环保宣称。",
+        "source": "规则库"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "medium",
+        "matched": [
+          "环保可降解"
+        ],
+        "basis": "美国联邦贸易委员会（FTC）《环保营销声明指南》（Green Guides，16 CFR Part 260）",
+        "basis_url": "",
+        "suggestion": "删除或修改“可降解”宣称，除非能提供符合FTC Green Guides的可靠科学证据，证明产品在通常处置条件下可降解；建议改为“含环保材质”等可验证表述，并保留检测报告。",
+        "source": "LLM"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "medium",
+        "matched": [
+          "Eco-Friendly Biodegradable"
+        ],
+        "basis": "美国联邦贸易委员会（FTC）《环保营销声明指南》（Green Guides，16 CFR Part 260）",
+        "basis_url": "",
+        "suggestion": "删除“Biodegradable”或补充可降解性检测依据及限定条件；避免泛化“Eco-Friendly”无依据宣称，改为具体可验证的材质说明。",
+        "source": "LLM"
+      },
+      {
+        "label": "认证缺失",
+        "type": "认证缺失",
+        "severity": "low",
+        "matched": [
+          "瑜伽垫"
+        ],
+        "basis": "美国消费品安全委员会（CPSC）消费品安全法规及亚马逊等平台合规要求（如适用CPC）",
+        "basis_url": "",
+        "suggestion": "如面向美国市场销售且属于儿童用品或含相关化学物质，需确认是否需CPC认证；建议向供应商索取材质检测报告（如邻苯二甲酸盐、重金属）并在 listing 中备查。",
+        "source": "LLM"
+      }
+    ],
+    "gold": [
+      "环保宣称需佐证"
+    ]
+  },
+  "P008": {
+    "detected": [
+      {
+        "label": "医疗功效宣称违规",
+        "type": "违禁词/虚假宣称",
+        "severity": "high",
+        "matched": [
+          "治疗"
+        ],
+        "basis": "FDA / Amazon Restricted Products",
+        "basis_url": "https://www.fda.gov",
+        "suggestion": "删除医疗/治疗功效宣称，改为成分或功能描述。",
+        "source": "规则库"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "high",
+        "matched": [
+          "治疗颈椎"
+        ],
+        "basis": "《中华人民共和国广告法》第十七条：除医疗、药品、医疗器械广告外，禁止其他任何广告涉及疾病治疗功能，并不得使用医疗用语或者易使推销的商品与药品、医疗器械相混淆的用语。",
+        "basis_url": "",
+        "suggestion": "删除“治疗颈椎”等医疗宣称，改为“缓解颈部疲劳”、“放松颈部肌肉”等非医疗表述。",
+        "source": "LLM"
+      },
+      {
+        "label": "违禁词/虚假宣称",
+        "type": "违禁词/虚假宣称",
+        "severity": "medium",
+        "matched": [
+          "疏通经络"
+        ],
+        "basis": "《中华人民共和国广告法》第十七条：非医疗器械广告不得涉及疾病治疗功能；《化妆品监督管理条例》等亦禁止明示或暗示医疗作用。",
+        "basis_url": "",
+        "suggestion": "删除“疏通经络”等中医治疗术语，改为“舒缓颈部不适”等非医疗描述。",
+        "source": "LLM"
+      },
+      {
+        "label": "认证缺失",
+        "type": "认证缺失",
+        "severity": "high",
+        "matched": [
+          "低频脉冲颈椎按摩仪"
+        ],
+        "basis": "《医疗器械监督管理条例》（国务院令第739号）规定，具有治疗作用的医疗器械须取得医疗器械注册证或备案凭证；美国FDA 21 CFR Part 890 亦要求此类设备进行上市前通知或豁免。",
+        "basis_url": "",
+        "suggestion": "若产品宣称医疗用途，需取得医疗器械注册/备案及相应认证（如FDA 510(k)）；否则删除医疗宣称，按普通电子产品销售。",
+        "source": "LLM"
+      },
+      {
+        "label": "认证缺失",
+        "type": "认证缺失",
+        "severity": "medium",
+        "matched": [
+          "Low-Frequency Pulse Neck Massager with Heat"
+        ],
+        "basis": "美国联邦通信委员会（FCC）47 CFR Part 15 对电子产品的电磁兼容性有要求；欧盟CE认证（EMC指令2014/30/EU）亦为强制。",
+        "basis_url": "",
+        "suggestion": "确认产品已取得FCC认证（如适用）和CE认证（如销往欧盟），并在 listing 中提供认证信息。",
+        "source": "LLM"
+      }
+    ],
+    "gold": [
+      "医疗功效宣称违规"
+    ]
+  }
+}
